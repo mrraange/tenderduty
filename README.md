@@ -85,5 +85,35 @@ echo -e "\033[0;32mhttp://$(wget -qO- eth0.me):8888/\033[0m"
 
 ![Screenshot_20](https://user-images.githubusercontent.com/100018176/189889538-04c2579a-6cb1-4da3-8755-fe6b525c4d6d.png)
 
+### Узнаем свой ID или ID группы (для этого добавляем бота в группу). Для того, чтобы узнать свой ID пишем боту @JsonViewBot и отправляем ему любое сообщение 
 
+![photo1663068674](https://user-images.githubusercontent.com/100018176/189890268-345064b8-ba20-406c-9ff7-2b227149537c.jpeg)
 
+###  добавляем ID и token API в наш конфиг, после чего перезагружаем мониторинг
+```
+docker restart tenderduty
+```
+![Screenshot_22](https://user-images.githubusercontent.com/100018176/189891041-3fb8412c-f9f4-4166-881c-6013d4df4719.png)
+
+# Полезное
+
+### посмотреть установленные образы
+```
+docker images
+```
+### посмотреть запущенные контейнеры
+```
+docker ps
+```
+### остановить контейнер
+```
+docker stop tenderduty
+```
+### перезапустить контейнер
+```
+docker restart tenderduty
+```
+### посмотреть логи
+```
+docker logs -f --tail 20 tenderduty
+```
