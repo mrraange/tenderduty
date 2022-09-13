@@ -38,6 +38,13 @@ docker run --rm ghcr.io/blockpane/tenderduty:latest -example-config >config.yml
 ## качаем конфиг с русским языком и редакрируем его
 
 ```
-wget -O $HOME/tenderduty/config.yml "https://raw.githubusercontent.com/lesnikutsa/lesnik_utsa/main/monitoring/TenderDuty(ru)/config.yml"
+wget -O $HOME/tenderduty/config.yml "https://raw.githubusercontent.com/mrraange/tenderduty/main/config.yml"
 nano $HOME/tenderduty/config.yml
 ```
+
+### Для обычного мониторинга без оповещений достаточно изменить в конфиге:
+
+имя сети:
+chain-id:
+valoper_address:
+url:
