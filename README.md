@@ -45,6 +45,45 @@ nano $HOME/tenderduty/config.yml
 ### Для обычного мониторинга без оповещений достаточно изменить в конфиге:
 
 имя сети:
+
 chain-id:
+
 valoper_address:
+
 url:
+
+### после настройки конфига запускаем
+
+```
+docker run -d --name tenderduty -p "8888:8888" -p "28686:28686" --restart unless-stopped -v $(pwd)/config.yml:/var/lib/tenderduty/config.yml ghcr.io/blockpane/tenderduty:latest
+```
+
+### смотрим логи
+
+```
+docker logs -f --tail 20 tenderduty
+```
+![Screenshot_16](https://user-images.githubusercontent.com/100018176/189885054-256590ca-8cc1-43e1-a480-a07b0d6a100e.png)
+
+
+### проверяем в браузере
+```
+echo -e "\033[0;32mhttp://$(wget -qO- eth0.me):8888/\033[0m"
+```
+
+пример  http://10.10.10.10:8888/
+
+![photo1663067731](https://user-images.githubusercontent.com/100018176/189887514-9567e023-de34-49d9-84cb-874ae69c8341.jpeg)
+
+# Настройка Telegram
+
+Нам будет необходимо создать своего бота и узнать ID своего telegram или ID необходимой нам группы в telegram
+
+### Создаем своего бота. 
+
+Для этого пишем боту @BotFather  и вводим команду /newbot - далее вводим имя бота - далее username (должно заканчиваться на bot). Бот выдаст token API, который надежно сохраняем и никому не показываем 
+
+![Screenshot_20](https://user-images.githubusercontent.com/100018176/189889538-04c2579a-6cb1-4da3-8755-fe6b525c4d6d.png)
+
+
+
